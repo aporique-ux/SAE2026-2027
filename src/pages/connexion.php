@@ -4,7 +4,7 @@
         <section>
             <article>
                 <h2>Connexion</h2>
-                <form action="module.html" method="post">
+                <form action="./actions/connect_action.php" method="post">
                     <label for="login">Identifiant</label>
                     <input id="login" name="login" type="text" required>
 
@@ -16,6 +16,18 @@
                 <p>Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p>
             </article>
         </section>
+
+        <?php 
+        if (isset($_GET['error'])) {
+            echo "
+            <div class='error'>
+            <p> tentative de connexion sans fournir d'identifiant ou mdp </p>
+            </div>
+            ";
+        }
+        ?> 
+
+
     </main>
 
 <?php include "../parts/bottom.html";  ?>
