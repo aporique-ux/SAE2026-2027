@@ -19,7 +19,7 @@
 
                     <button type="submit">Créer mon compte</button>
                 </form>
-                <p>Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>
+                <p>Déjà inscrit ? <a href="connexion.php">Se connecter</a></p>
             </article>
         </section>
     </main>

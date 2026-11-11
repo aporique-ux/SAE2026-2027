@@ -13,7 +13,7 @@
 
                     <button type="submit">Se connecter</button>
                 </form>
-                <p>Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p>
+                <p>Pas encore de compte ? <a href="inscription.php">Créer un compte</a></p>
             </article>
         </section>
 
