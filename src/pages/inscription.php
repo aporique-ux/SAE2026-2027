@@ -1,4 +1,4 @@
-<?php include "../src/parts/top.html";  ?>
+<?php include "../parts/top.html";  ?>
 
     <main>
         <section>
@@ -24,4 +24,4 @@
         </section>
     </main>
 
-<?php include "../src/parts/bottom.html";  ?>
+<?php include "../parts/bottom.html";  ?>

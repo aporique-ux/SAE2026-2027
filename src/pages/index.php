@@ -1,4 +1,5 @@
-<?php include "../src/parts/top.html";  ?>
+
+<?php include "../parts/top.html";  ?>
 
 <main>
     <section>
@@ -6,15 +7,15 @@
       <h2>Résolvez des énigmes, relevez des défis</h2>
       <p>Créez un compte, jouez à votre rythme !</p>
       <p>
-        <a href="inscription.html">Créer un compte</a> 
-        <a href="connexion.html">Se connecter</a>
+        <a href="inscription.php">Créer un compte</a> 
+        <a href="connexion.php">Se connecter</a>
       </p>
     </article>
   </section>
 </main>
 
 
-<?php include "../src/parts/bottom.html";  ?>
+<?php include "../parts/bottom.html";  ?>
 
 
 

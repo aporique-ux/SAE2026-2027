@@ -1,0 +1,132 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Barre de navigation */
+nav {
+    background-color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Contenu principal */
+main {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+article {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+article h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Formulaire (page connexion) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1a252f;
+}
+
+/* Liens boutons sur la page d'accueil */
+article p a {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px 5px 5px 0;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+article p a:hover {
+    background-color: #1a252f;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
