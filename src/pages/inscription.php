@@ -4,7 +4,7 @@
         <section>
             <article>
                 <h2>Créer un compte</h2>
-                <form action="./actions/signup_action.php" method="post">
+                <form action="./actions/inscription_action.php" method="post">
                     <label for="nom">Identifiant</label>
                     <input id="nom" name="nom" type="text" required>
 
