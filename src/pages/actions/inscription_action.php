@@ -5,7 +5,7 @@ if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'])){
         exit;
     }
 
-    $password = $_POST['mdp1'];
+    $password = md5($_POST['mdp1']);
     $login = $_POST['nom'];
     $connexion=mysqli_connect("localhost","admin","SAE26");
     $base = "SAE";
