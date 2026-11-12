@@ -1,6 +1,6 @@
 <?php
-if (isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'] )){
-    if (! $_POST['mdp1'] == $_POST['mdp2']){
+if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'])){
+    if($_POST['mdp1'] != $_POST['mdp2']){
         header('Location: ../inscription.php?error=different_mdp');
         exit;
     }
@@ -24,7 +24,7 @@ if (isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'] )){
         header('Location: ../inscription.php?error=taken_login');
         exit;
     } else {
-        $stmt= $mysqli->prepare("INSERT INTO 'utilisateurs' ('nom', 'password') VALUES (?, ?)");
+        $stmt = $mysqli->prepare("INSERT INTO `utilisateurs` (`nom`, `password`) VALUES (?, ?)");
         $stmt->bind_param('ss', $login,$password);
         $stmt->execute();
         session_start();
