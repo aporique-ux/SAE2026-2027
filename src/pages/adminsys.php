@@ -1,4 +1,5 @@
 <?php
+include "../parts/top.html";
 session_start();
 if(isset($_SESSION['login'])){
     $login = $_SESSION['login'];
@@ -9,4 +10,7 @@ if(isset($_SESSION['login'])){
     header("location: connexion.php?error=not_connected");
     exit;
 }
+
+include "../parts/bottom.html";
+
 ?>
