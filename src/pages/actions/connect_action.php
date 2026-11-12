@@ -25,8 +25,8 @@ if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
     $db = mysqli_select_db($connexion,$base);
 
     $mysqli = new mysqli('localhost','admin','SAE26',$base);
-    $stmt= $mysqli->prepare("SELECT * FROM $table WHERE nom = ?;");
-    $stmt->bind_param('s', $login);
+    $stmt= $mysqli->prepare("SELECT * FROM $table WHERE nom = ? and password = ? ;");
+    $stmt->bind_param('ss', $login, $password);
     $stmt->execute();
     $result = $stmt->get_result();
     $nom = $result->fetch_assoc();
