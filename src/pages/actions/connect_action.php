@@ -18,6 +18,11 @@ if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
     }
     
     //if login dans la bdd avec bon mdp A FAIRE
+    $connexion=connexion("localhost","admin","SAE26");
+    $base = "SAE";
+    $table = "utilisateurs"
+    $db = mysqli_select_db($connexion,$base);
+    $sql="SELECT * FROM $table";
 
         session_start();
         $_SESSION['login'] = $login;
