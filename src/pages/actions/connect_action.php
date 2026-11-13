@@ -3,14 +3,14 @@ if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
     $login = $_POST['login'];
     $password = md5($_POST['mdp']);
      
-    if ($login == 'adminweb' && $password == 'adminweb'){
+    if ($login == 'adminweb' && $_POST['mdp'] == 'adminweb'){
         session_start();
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $password;
         header('Location: ../adminweb.php');
         exit;
     }
-    if ($login == 'adminsys' && $password =='adminsys'){
+    if ($login == 'adminsys' && $_POST['mdp'] == 'adminsys'){
         session_start();
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $password;
