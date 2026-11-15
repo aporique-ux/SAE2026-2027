@@ -18,12 +18,20 @@
         </section>
 
         <?php 
-        if (isset($_GET['error'])) {
-            echo "
-            <div class='error'>
-            <p> tentative de connexion sans fournir d'identifiant ou mdp </p>
-            </div>
-            ";
+        if (isset($_GET['error'])) {   // MODIFIÉ : tout ce bloc
+            $erreur = $_GET['error'];
+            if ($erreur == 'no_input') {
+                $message = "Veuillez remplir l'identifiant et le mot de passe.";
+            } elseif ($erreur == 'wrong_identity') {
+                $message = "Identifiant ou mot de passe incorrect.";
+            } elseif ($erreur == 'not_connected') {
+                $message = "Vous devez être connecté pour accéder à cette page.";
+            } elseif ($erreur == 'bdd') {
+                $message = "Problème technique, veuillez réessayer plus tard.";
+            } else {
+                $message = "Une erreur est survenue.";
+            }
+            echo "<div class='error'><p>" . $message . "</p></div>";
         }
         ?> 
 
