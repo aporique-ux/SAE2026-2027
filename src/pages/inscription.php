@@ -22,6 +22,24 @@
                 <p>Déjà inscrit ? <a href="connexion.php">Se connecter</a></p>
             </article>
         </section>
+
+        <?php
+        if (isset($_GET['error'])) {
+            $erreur = $_GET['error'];
+            if ($erreur == 'no_input') {
+                $message = "Veuillez remplir tous les champs.";
+            } elseif ($erreur == 'different_mdp') {
+                $message = "Les deux mots de passe sont différents.";
+            } elseif ($erreur == 'taken_login') {
+                $message = "Cet identifiant est déjà pris.";
+            } elseif ($erreur == 'bdd') {
+                $message = "Problème technique, veuillez réessayer plus tard.";
+            } else {
+                $message = "Une erreur est survenue.";
+            }
+            echo "<div class='error'><p>" . $message . "</p></div>";
+        }
+        ?>
     </main>
 
 <?php include "../parts/bottom.html";  ?>
