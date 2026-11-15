@@ -130,3 +130,6 @@ footer {
     margin-top: 40px;
     padding-bottom: 20px;
 }
+
+/* Message d'erreur */
+.error { border-left: 4px solid #b3261e; padding: 8px 12px; }
