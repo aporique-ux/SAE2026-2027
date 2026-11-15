@@ -1,6 +1,6 @@
 <?php
 include "../parts/top.html";
-session_start();
+
 if(isset($_SESSION['login'])){
     $login = $_SESSION['login'];
     echo "<h1>Bonjour ".$login."</h1>";
