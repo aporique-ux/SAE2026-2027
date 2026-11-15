@@ -1,4 +1,5 @@
 <?php 
+
 if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
     $login = $_POST['login'];
     $password = md5($_POST['mdp']);
@@ -19,17 +20,22 @@ if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
     }
     
     //if login dans la bdd avec bon mdp A FAIRE
-    $connexion=mysqli_connect("localhost","admin","SAE26");
-    $base = "SAE";
-    $table = "utilisateurs";
-    $db = mysqli_select_db($connexion,$base);
+    try { 
+        $connexion=mysqli_connect("localhost","admin","SAE26");
+        $base = "SAE";
+        $table = "utilisateurs";
+        $db = mysqli_select_db($connexion,$base);
 
-    $mysqli = new mysqli('localhost','admin','SAE26',$base);
-    $stmt= $mysqli->prepare("SELECT * FROM $table WHERE nom = ? and password = ? ;");
-    $stmt->bind_param('ss', $login, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $nom = $result->fetch_assoc();
+        $mysqli = new mysqli('localhost','admin','SAE26',$base);
+        $stmt= $mysqli->prepare("SELECT * FROM $table WHERE nom = ? and password = ? ;");
+        $stmt->bind_param('ss', $login, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $nom = $result->fetch_assoc();
+    } catch (mysqli_sql_exception $erreur) {   // AJOUT
+        header("Location: ../connexion.php?error=bdd");   // AJOUT
+        exit;   // AJOUT
+    }   // AJOUT
     if ($nom['nom'] ==  $login){
         session_start();
         $_SESSION['login'] = $login;
