@@ -1,4 +1,3 @@
-
 <?php include "../parts/top.html";  ?>
 
 <main>
