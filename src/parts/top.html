@@ -1,3 +1,8 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {   //démarre la session si elle ne l'est pas déjà
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,7 +23,20 @@
         </ul>
 
         <ul>
-            <li><a href="connexion.php">Connexion</a></li>
+            <?php
+            if (isset($_SESSION['login'])) {
+                if ($_SESSION['login'] == 'adminweb') {
+                    $page_profil = 'adminweb.php';
+                } elseif ($_SESSION['login'] == 'adminsys') {
+                    $page_profil = 'adminsys.php';
+                } else {
+                    $page_profil = 'user.php';
+                }
+                echo "<li><a href='" . $page_profil . "'>Profil</a></li>";
+            } else {
+                echo "<li><a href='connexion.php'>Connexion</a></li>";
+            }
+            ?>
             <li><a href="inscription.php">Inscription</a></li>
         </ul>
     </nav>
