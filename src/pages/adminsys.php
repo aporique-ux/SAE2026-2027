@@ -1,5 +1,5 @@
 <?php
-include "../parts/top.html";
+include "../parts/top.php";
 
 if(isset($_SESSION['login'])){
     $login = $_SESSION['login'];

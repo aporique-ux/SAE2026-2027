@@ -1,4 +1,4 @@
-<?php include "../parts/top.html";  ?>
+<?php include "../parts/top.php";  ?>
 
     <main>
         <section>

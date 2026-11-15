@@ -19,7 +19,6 @@ if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
         exit;
     }
     
-    //if login dans la bdd avec bon mdp A FAIRE
     try { 
         $connexion=mysqli_connect("localhost","admin","SAE26");
         $base = "SAE";
