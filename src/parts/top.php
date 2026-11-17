@@ -35,8 +35,8 @@ if (session_status() == PHP_SESSION_NONE) {   //démarre la session si elle ne l
                 echo "<li><a href='" . $page_profil . "'>Profil</a></li>";
             } else {
                 echo "<li><a href='connexion.php'>Connexion</a></li>";
+                echo "<li><a href="inscription.php">Inscription</a></li>";
             }
             ?>
-            <li><a href="inscription.php">Inscription</a></li>
         </ul>
     </nav>
