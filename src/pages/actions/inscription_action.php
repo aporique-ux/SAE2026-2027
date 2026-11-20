@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'])){
+if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'],$_POST['email'])){
 
     if($_POST['mdp1'] != $_POST['mdp2']){
         header('Location: ../inscription.php?error=different_mdp');
@@ -22,18 +22,18 @@ if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'])){
 
         $mysqli = new mysqli('localhost','admin','SAE26',$base);
 
-        $stmt= $mysqli->prepare("SELECT * FROM $table WHERE nom = ?;");
-        $stmt->bind_param('s', $login);
+        $stmt= $mysqli->prepare("SELECT * FROM $table WHERE nom = ? or mail = ?;");
+        $stmt->bind_param('ss', $login, $_POST['mail']);
         $stmt->execute();
         $result = $stmt->get_result();
 
         $nom = $result->fetch_assoc();
         if ($nom['nom'] ==  $login){
-            header('Location: ../inscription.php?error=taken_login');
+            header('Location: ../inscription.php?error=already_used');
             exit;
         } else {
-            $stmt = $mysqli->prepare("INSERT INTO `utilisateurs` (`nom`, `password`) VALUES (?, ?)");
-            $stmt->bind_param('ss', $login,$password);
+            $stmt = $mysqli->prepare("INSERT INTO `utilisateurs` (`nom`, `password`,`mail`) VALUES (?, ?, ?)");
+            $stmt->bind_param('sss', $login,$password,$_POST['mail']);
             $stmt->execute();
             session_start();
             $_SESSION['login'] = $login;

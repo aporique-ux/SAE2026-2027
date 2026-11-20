@@ -30,8 +30,8 @@
                 $message = "Veuillez remplir tous les champs.";
             } elseif ($erreur == 'different_mdp') {
                 $message = "Les deux mots de passe sont différents.";
-            } elseif ($erreur == 'taken_login') {
-                $message = "Cet identifiant est déjà pris.";
+            } elseif ($erreur == 'already_used') {
+                $message = "Cet identifiant ou mail est déjà pris.";
             } elseif ($erreur == 'bdd') {
                 $message = "Problème technique, veuillez réessayer plus tard.";
             } elseif ($erreur == 'not_email') {
