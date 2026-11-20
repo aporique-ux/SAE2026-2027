@@ -11,7 +11,7 @@ if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'],$_POST['email'])){
         exit;
     }
 
-    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == 0){
         header('Location: ../inscription.php?error=invalid_mail');
         exit;
     }
