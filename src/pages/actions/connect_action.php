@@ -40,7 +40,7 @@ if (isset($_POST['login'] ) && isset($_POST['mdp'])) {
     }   // AJOUT
     if ($nom['mail'] ==  $login){
         session_start();
-        $_SESSION['login'] = $login;
+        $_SESSION['login'] = $nom['nom'];
         $_SESSION['password'] = $password;
         header('Location: ../user.php');
         exit;
