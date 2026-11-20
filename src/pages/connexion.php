@@ -5,7 +5,7 @@
             <article>
                 <h2>Connexion</h2>
                 <form action="./actions/connect_action.php" method="post">
-                    <label for="login">Identifiant</label>
+                    <label for="login">Adresse e-mail</label>
                     <input id="login" name="login" type="text" required>
 
                     <label for="mdp">Mot de passe</label>
