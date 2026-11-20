@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {   //démarre la session si elle ne l
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion - MasterLag</title>
+    <title>MasterLag</title>
     <link href="../style/style.css" rel="stylesheet" type="text/css">
 </head>
 
