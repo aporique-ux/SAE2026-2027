@@ -1,7 +1,13 @@
 <?php
 if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'])){
+
     if($_POST['mdp1'] != $_POST['mdp2']){
         header('Location: ../inscription.php?error=different_mdp');
+        exit;
+    }
+
+    if(estComplexe($_POST['mdp1']) == 0){
+        header('Location: ../inscription.php?error=weak_psw');
         exit;
     }
 
@@ -45,5 +51,11 @@ if(isset($_POST['nom'], $_POST['mdp1'],$_POST['mdp2'])){
     exit;
 }
 
+
+function estComplexe($password) {
+    // Vérifie : minuscule, majuscule, chiffre, caractère spécial, longueur >= 8
+    $pattern = '/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[#?!@$%^&*-]).{8,}$/';
+    return preg_match($pattern, $password) === 1;
+}
 
 ?>
