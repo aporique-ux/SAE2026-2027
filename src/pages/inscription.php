@@ -34,7 +34,11 @@
                 $message = "Cet identifiant est déjà pris.";
             } elseif ($erreur == 'bdd') {
                 $message = "Problème technique, veuillez réessayer plus tard.";
-            } else {
+            } elseif ($erreur == 'not_email') {
+                $message = "L'identifiant n'est pas une adresse mail"
+            } elseif ($erreur == 'weak_psw'){
+                $message = "Mot de passe trop faible, le mdp doit contenir au moin une lettre maj, une lettre min, un chiffre, un charactére spécial et doit faire à minimat 8 charactéres.";
+            }else {
                 $message = "Une erreur est survenue.";
             }
             echo "<div class='error'><p>" . $message . "</p></div>";
