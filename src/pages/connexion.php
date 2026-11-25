@@ -14,6 +14,7 @@
                     <button type="submit">Se connecter</button>
                 </form>
                 <p>Pas encore de compte ? <a href="inscription.php">Créer un compte</a></p>
+                <p><a href="mdp_oublie.php">Mot de passe oublié ?</a></p>   <!-- AJOUT -->
             </article>
         </section>
 
